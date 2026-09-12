@@ -1,0 +1,8 @@
+# The floating latest tag, so a rebuild picks up the newest stable alpine.
+# It is published as an index holding real amd64 and arm64 layers, so each
+# runner builds from binaries its own kernel can exec.
+FROM alpine:latest
+LABEL maintainer=jon@jaggersoft.com
+
+COPY install.sh .
+RUN ./install.sh && rm ./install.sh
