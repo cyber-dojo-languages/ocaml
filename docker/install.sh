@@ -22,6 +22,14 @@ if [ -z "${OCAML_VERSION}" ]; then
   exit 1
 fi
 
-echo "{\"ocaml\":\"${OCAML_VERSION}\"}" > /versions.json
+cat > /versions.json <<EOF
+{
+  "language": {
+    "name": "OCaml",
+    "version": "${OCAML_VERSION}"
+  },
+  "test_frameworks": []
+}
+EOF
 
 rm -rf /var/cache/apk/*
