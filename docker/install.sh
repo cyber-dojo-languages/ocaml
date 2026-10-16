@@ -11,9 +11,9 @@
 apk update
 apk add ocaml ocaml-findlib
 
-# Read by check_version.sh, and by the install.sh of images built on this one,
-# so both state the version this image actually holds rather than one written
-# down when someone last edited them. The compiler is asked rather than the
+# Recorded in /versions.json and read by the install.sh of images built on
+# this one, so both state the version this image actually holds rather than
+# one written down when someone last edited them. The compiler is asked rather than the
 # package index, so a version recorded here is one the image can run.
 readonly OCAML_VERSION=$(ocaml -version | sed --quiet 's/.*version \([0-9][0-9.]*\).*/\1/p')
 
